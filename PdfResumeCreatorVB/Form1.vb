@@ -15,18 +15,22 @@ Imports System.IO
 
 Public Class Form1
 
-    Private location As String = "@C:\Users\ASUNCION\source\repos\VB\PdfResumeCreatorVB\Converted.json"
+    Public location As String = "C:/Users/ASUNCION/source/repos/VB/PdfResumeCreatorVB/Converted.json"
 
     Private Sub btnConvert_Click(sender As Object, e As EventArgs) Handles btnConvert.Click
 
         Dim openJson As String = File.ReadAllText(location)
         Dim finalJson As datagather = JsonConvert.DeserializeObject(Of datagather)(openJson)
         Dim pdfFile As Document = New Document()
-        PdfWriter.GetInstance(pdfFile, New FileStream("@C:\Users\ASUNCION\source\repos\VB\PdfResumeCreatorVB\ASUNCION_JACOB.pdf", FileMode.Create))
+        PdfWriter.GetInstance(pdfFile, New FileStream("C:\Users\ASUNCION\source\repos\VB\PdfResumeCreatorVB\ASUNCION_JACOB.pdf", FileMode.Create))
         pdfFile.Open()
 
+        Dim fullname As Paragraph = New Paragraph(finalJson.FullName)
+        fullname.Alignment = Element.ALIGN_CENTER
+        pdfFile.Add(fullname)
+        Dim address As Paragraph = New Paragraph(finalJson.Address)
 
-
+        pdfFile.Close()
 
     End Sub
     Public Class datagather
