@@ -89,7 +89,14 @@ Public Class Form1
         skill3.Alignment = Element.ALIGN_LEFT
         pdfFile.Add(skill3)
         pdfFile.Add(separator)
-
+        Dim signatureimg As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(finalJson.Signature)
+        signatureimg.ScalePercent(5.0F)
+        signatureimg.Alignment = iTextSharp.text.Image.UNDERLYING Or iTextSharp.text.Image.ALIGN_RIGHT
+        signatureimg.IndentationRight = 50
+        pdfFile.Add(signatureimg)
+        Dim fullname1 As Paragraph = New Paragraph(finalJson.FullName)
+        fullname1.Alignment = Element.ALIGN_RIGHT
+        pdfFile.Add(fullname1)
         pdfFile.Close()
         MessageBox.Show("PDF has been created!")
 
