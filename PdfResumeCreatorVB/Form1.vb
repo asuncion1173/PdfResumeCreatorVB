@@ -98,7 +98,7 @@ Public Class Form1
         fullname1.Alignment = Element.ALIGN_RIGHT
         pdfFile.Add(fullname1)
         pdfFile.Close()
-        MessageBox.Show("PDF has been created!")
+        MessageBox.Show("PDF has been created! Check folder!")
 
 
     End Sub
