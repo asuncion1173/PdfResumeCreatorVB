@@ -41,9 +41,32 @@ Public Class Form1
         email.Alignment = Element.ALIGN_CENTER
         pdfFile.Add(email)
         pdfFile.Add(separator)
-
+        Dim careerTitle As Paragraph = New Paragraph(finalJson.CareerTitle & vbLf)
+        careerTitle.Font.Size = 18
+        careerTitle.Alignment = Element.ALIGN_LEFT
+        pdfFile.Add(careerTitle)
+        Dim career As Paragraph = New Paragraph(finalJson.Career & vbLf & vbLf)
+        career.IndentationLeft = 40
+        career.Alignment = Element.ALIGN_LEFT
+        pdfFile.Add(career)
+        pdfFile.Add(separator)
+        Dim educTitle As Paragraph = New Paragraph(finalJson.EducationTitle)
+        educTitle.Font.Size = 18
+        educTitle.Alignment = Element.ALIGN_LEFT
+        pdfFile.Add(educTitle)
+        Dim educ1 As Paragraph = New Paragraph(finalJson.Education1)
+        educ1.IndentationLeft = 40
+        educ1.Alignment = Element.ALIGN_LEFT
+        pdfFile.Add(educ1)
+        Dim educ2 As Paragraph = New Paragraph(finalJson.Education2 & vbLf & vbLf)
+        educ2.IndentationLeft = 40
+        educ2.Alignment = Element.ALIGN_LEFT
+        pdfFile.Add(educ2)
+        pdfFile.Add(separator)
 
         pdfFile.Close()
+        MessageBox.Show("PDF has been created!")
+
 
     End Sub
     Public Class datagather
