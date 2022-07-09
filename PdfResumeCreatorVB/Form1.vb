@@ -14,6 +14,9 @@ Imports iTextSharp.text.pdf.draw
 Imports System.IO
 
 Public Class Form1
+
+    Private location As String = "@C:\Users\ASUNCION\source\repos\VB\PdfResumeCreatorVB\Converted.json"
+
     Private Sub btnConvert_Click(sender As Object, e As EventArgs) Handles btnConvert.Click
 
     End Sub
