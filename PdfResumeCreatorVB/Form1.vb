@@ -63,6 +63,32 @@ Public Class Form1
         educ2.Alignment = Element.ALIGN_LEFT
         pdfFile.Add(educ2)
         pdfFile.Add(separator)
+        Dim workExpTitle As Paragraph = New Paragraph(finalJson.WorkExperienceTitle & vbLf)
+        workExpTitle.Font.Size = 18
+        workExpTitle.Alignment = Element.ALIGN_LEFT
+        pdfFile.Add(workExpTitle)
+        Dim workExp1 As Paragraph = New Paragraph(finalJson.WorkExperience1 & vbLf & vbLf)
+        workExp1.IndentationLeft = 40
+        workExp1.Alignment = Element.ALIGN_LEFT
+        pdfFile.Add(workExp1)
+        pdfFile.Add(separator)
+        Dim skillsTitle As Paragraph = New Paragraph(finalJson.SkillsTitle & vbLf)
+        skillsTitle.Font.Size = 18
+        skillsTitle.Alignment = Element.ALIGN_LEFT
+        pdfFile.Add(skillsTitle)
+        Dim skill1 As Paragraph = New Paragraph(finalJson.Skill1)
+        skill1.IndentationLeft = 40
+        skill1.Alignment = Element.ALIGN_LEFT
+        pdfFile.Add(skill1)
+        Dim skill2 As Paragraph = New Paragraph(finalJson.Skill2)
+        skill2.IndentationLeft = 40
+        skill2.Alignment = Element.ALIGN_LEFT
+        pdfFile.Add(skill2)
+        Dim skill3 As Paragraph = New Paragraph(finalJson.Skill3 & vbLf & vbLf)
+        skill3.IndentationLeft = 40
+        skill3.Alignment = Element.ALIGN_LEFT
+        pdfFile.Add(skill3)
+        pdfFile.Add(separator)
 
         pdfFile.Close()
         MessageBox.Show("PDF has been created!")
