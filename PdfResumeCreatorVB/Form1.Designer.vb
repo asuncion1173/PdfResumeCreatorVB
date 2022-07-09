@@ -35,7 +35,7 @@ Partial Class Form1
         'btnConvert
         '
         Me.btnConvert.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnConvert.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnConvert.BackColor = System.Drawing.Color.MidnightBlue
         Me.btnConvert.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnConvert.Font = New System.Drawing.Font("Gotham", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConvert.ForeColor = System.Drawing.Color.White
