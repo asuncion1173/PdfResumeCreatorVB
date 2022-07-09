@@ -19,16 +19,29 @@ Public Class Form1
 
     Private Sub btnConvert_Click(sender As Object, e As EventArgs) Handles btnConvert.Click
 
+
         Dim openJson As String = File.ReadAllText(location)
         Dim finalJson As datagather = JsonConvert.DeserializeObject(Of datagather)(openJson)
         Dim pdfFile As Document = New Document()
         PdfWriter.GetInstance(pdfFile, New FileStream("C:\Users\ASUNCION\source\repos\VB\PdfResumeCreatorVB\ASUNCION_JACOB.pdf", FileMode.Create))
         pdfFile.Open()
 
+        pdfFile.Open()
+        Dim separator As LineSeparator = New LineSeparator(3.0F, 100.0F, BaseColor.BLACK, Element.ALIGN_CENTER, 1)
         Dim fullname As Paragraph = New Paragraph(finalJson.FullName)
         fullname.Alignment = Element.ALIGN_CENTER
         pdfFile.Add(fullname)
         Dim address As Paragraph = New Paragraph(finalJson.Address)
+        address.Alignment = Element.ALIGN_CENTER
+        pdfFile.Add(address)
+        Dim number As Paragraph = New Paragraph(finalJson.Number)
+        number.Alignment = Element.ALIGN_CENTER
+        pdfFile.Add(number)
+        Dim email As Paragraph = New Paragraph(finalJson.Email & vbLf & vbLf)
+        email.Alignment = Element.ALIGN_CENTER
+        pdfFile.Add(email)
+        pdfFile.Add(separator)
+
 
         pdfFile.Close()
 
